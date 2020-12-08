@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PhasesService } from './phases.service';
 
 @Component({
   selector: 'app-header',
@@ -8,16 +9,21 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public router:Router) { }
+  selectedPhase:number = 1;
+
+  phases:any;
+
+  constructor(private router:Router, private phasesService: PhasesService) { }
 
   ngOnInit(): void {
+    this.phases = this.phasesService.getPhases();
   }
 
   isHomeRoute(){
     return this.router.url === '/';
   }
 
-  isClicked(){
-    
+  selectPhase(){
+    this.phasesService.selectPhase(this.selectedPhase);
   }
 }

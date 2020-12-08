@@ -8,6 +8,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { AllFilesComponent } from './all-files/all-files.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ViewComponent } from './all-files/view/view.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ViewComponent } from './all-files/view/view.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

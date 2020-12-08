@@ -23,12 +23,10 @@
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0" *ngIf="isHomeRoute()">
-        <select name="phases" id="phases">
-            <option value="initiation">Project Initiation Phase</option>
-            <option value="requirements">Requirements Phase</option>
-            <option value="design">Design Phase</option>
+        <select [(ngModel)]="selectedPhase" class="form-control mr-sm-2" name="phases" id="phases">
+            <option *ngFor="let phase of phases" value="{{phase.id}}">{{ phase.name }}</option>
         </select>
-        <button class="btn btn-outline-success my-2 my-sm-0" (click)="isClicked()">Create New</button>
+        <button class="btn btn-outline-success my-2 my-sm-0" (click)="selectPhase()">Create New</button>
       </form>
     </div>
   </nav>
