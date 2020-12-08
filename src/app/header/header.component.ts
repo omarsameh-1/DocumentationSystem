@@ -16,4 +16,8 @@ export class HeaderComponent implements OnInit {
   isHomeRoute(){
     return this.router.url === '/';
   }
+
+  isClicked(){
+    
+  }
 }

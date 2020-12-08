@@ -1,6 +1,35 @@
-<nav>
-    <a [routerLink]="['/']">Home</a>
-    <a [routerLink]="['/all']">All Files</a>
-    <div></div>
-    <a [routerLink]="" *ngIf="isHomeRoute()">Create New</a>
-</nav>
+<nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Documentation System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" [routerLink]="['/']">
+            <i class="fa fa-home"></i>
+            Home
+            <span class="sr-only">(current)</span>
+            </a>
+        </li>
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" [routerLink]="['/all']">
+            <i class="fa fa-file">
+              <!-- <span class="badge badge-danger">11</span> -->
+            </i>
+            All Files
+          </a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0" *ngIf="isHomeRoute()">
+        <select name="phases" id="phases">
+            <option value="initiation">Project Initiation Phase</option>
+            <option value="requirements">Requirements Phase</option>
+            <option value="design">Design Phase</option>
+        </select>
+        <button class="btn btn-outline-success my-2 my-sm-0" (click)="isClicked()">Create New</button>
+      </form>
+    </div>
+  </nav>
+  
