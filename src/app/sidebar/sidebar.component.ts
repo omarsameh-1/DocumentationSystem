@@ -34,4 +34,8 @@ export class SidebarComponent implements OnInit {
     //Show doc on page
   }
 
+  getNumberOfDocs(){
+    return this.docsService.getNumberOfDocs();
+  }
+
 }

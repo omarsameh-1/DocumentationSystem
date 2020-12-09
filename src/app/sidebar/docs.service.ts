@@ -21,6 +21,10 @@ export class DocsService {
     return this.docs[id-1];
   }
 
+  getNumberOfDocs(){
+    return this.docs.length;
+  }
+
   getDocs(){
     return this.docs;
   }

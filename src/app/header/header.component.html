@@ -16,7 +16,7 @@
         <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
           <a class="nav-link" [routerLink]="['/all']">
             <i class="fa fa-file">
-              <!-- <span class="badge badge-danger">11</span> -->
+              <span class="badge badge-danger" *ngIf="numberOfDocs > 0">{{numberOfDocs}}</span>
             </i>
             All Files
           </a>

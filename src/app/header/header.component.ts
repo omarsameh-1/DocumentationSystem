@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DocsService } from '../sidebar/docs.service';
 import { PhasesService } from './phases.service';
 
 @Component({
@@ -13,10 +14,13 @@ export class HeaderComponent implements OnInit {
 
   phases:any;
 
-  constructor(private router:Router, private phasesService: PhasesService) { }
+  numberOfDocs:number = 0;
+
+  constructor(private router:Router, private phasesService: PhasesService, private docsService: DocsService) { }
 
   ngOnInit(): void {
     this.phases = this.phasesService.getPhases();
+    this.numberOfDocs = this.docsService.getNumberOfDocs();
   }
 
   isHomeRoute(){
