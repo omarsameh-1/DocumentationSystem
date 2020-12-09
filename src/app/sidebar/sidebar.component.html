@@ -1,4 +1,5 @@
 
 <ul class="list-group">
-	<li *ngFor="let doc of docs" id="{{doc.id}}" class="list-group-item" (click)="showDoc($event)">{{doc.name}}</li>
-  </ul>
+  <li class="list-group-item active">Documents</li>
+  <li *ngFor="let doc of docs" id="{{doc.id}}" class="list-group-item" (click)="showDoc($event)">{{doc.name}}</li>
+</ul>
