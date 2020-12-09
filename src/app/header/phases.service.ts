@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class PhasesService {
 
-  chosenPhase: number = 1;
+  chosenPhase: number = 0;
 
   phases = [
     {id: 1, name: "Project Initiation Phase"},
@@ -17,6 +17,12 @@ export class PhasesService {
 
   getPhases(){
     return this.phases;
+  }
+
+  getPhase(){
+    if(this.chosenPhase == 0)
+      return "";
+    return this.phases[this.chosenPhase-1].id;
   }
 
   selectPhase(phaseId: number){

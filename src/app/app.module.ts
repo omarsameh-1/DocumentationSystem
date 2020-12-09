@@ -9,6 +9,10 @@ import { AllFilesComponent } from './all-files/all-files.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ViewComponent } from './all-files/view/view.component';
 import { FormsModule } from '@angular/forms';
+import { PhaseComponent } from './phase/phase.component';
+import { InitialPhaseComponent } from './phase/initial-phase/initial-phase.component';
+import { RequirementsPhaseComponent } from './phase/requirements-phase/requirements-phase.component';
+import { DesignPhaseComponent } from './phase/design-phase/design-phase.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { FormsModule } from '@angular/forms';
     SidebarComponent,
     AllFilesComponent,
     HomepageComponent,
-    ViewComponent
+    ViewComponent,
+    PhaseComponent,
+    InitialPhaseComponent,
+    RequirementsPhaseComponent,
+    DesignPhaseComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,5 @@
+<div *ngIf="getPhaseView() !== 0">
+    <app-initial-phase *ngIf="getPhaseView() == 1"></app-initial-phase>
+    <app-requirements-phase *ngIf="getPhaseView() == 2"></app-requirements-phase>
+    <app-design-phase *ngIf="getPhaseView() == 3"></app-design-phase>
+</div>
