@@ -1,1 +1,40 @@
-<p>initial-phase works!</p>
+<div>
+<form id="form">
+    <div class="form-group">
+      <label for="projectTitle">Project Title</label>
+      <input type="text" class="form-control" id="projectTitle"placeholder="Enter your project title">
+      <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+    </div>
+    <div class="form-group">
+        <label for="startDate">Start Date</label>
+        <input type="date" class="form-control" id="startDate"placeholder="Enter your project start date">
+        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+    </div>
+    <div class="form-group">
+        <label for="endDate">End Date</label>
+        <input type="date" class="form-control" id="endDate"placeholder="Enter your project end date">
+        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+    </div>
+    <div class="form-group">
+        <label for="projectObjectives">Project Objectives </label>
+        <input type="text" class="form-control" id="projectObjectives"placeholder="Enter your project objectives">
+        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+    </div>
+    <div class="form-group">
+        <label for="projectManager">Project Manager</label>
+        <input type="text" class="form-control" id="projectManager"placeholder="Enter your project Manager">
+        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+    </div>
+    <div class="form-group">
+        <label for="budgetInformation">Budget Information</label>
+        <input type="text" class="form-control" id="budgetInformation"placeholder="Enter your project budget information">
+        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+    </div>
+    <div class="form-group">
+        <label for="projectScope">Project Scope</label>
+        <input type="text" class="form-control" id="projectScope"placeholder="Enter your project scope">
+        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="getDoc()">Save</button>
+  </form>
+</div>
