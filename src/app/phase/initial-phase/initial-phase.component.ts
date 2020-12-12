@@ -9,27 +9,29 @@ import { DocsService } from 'src/app/sidebar/docs.service';
 })
 export class InitialPhaseComponent implements OnInit {
 
+doc = {
+    id : this.docsService.getNumberOfDocs()+1,
+    name : 'Project Charter',
+    details :{}
+  };
+    
   constructor(private docsService:DocsService) { }
 
   ngOnInit(): void {
   }
 
   getDoc(){
-    let doc = {};
-    console.log(form);
-    doc.id= this.docsService.getNumberOfDocs()+1;
-    doc.name= 'Project Charter';
-    doc.details = {
 
-      projectTitle : document.getElementById('projectTitle').value,
-      startDate : document.getElementById('startDate').value,
-      endDate : document.getElementById('endDate').value,
-      projectObjectives : document.getElementById('projectObjectives').value,
-      projectManager : document.getElementById('projectManager').value,
-      budgetInformation : document.getElementById('budgetInformation').value,
-      projectScope : document.getElementById('projectScope').value,
+    this.doc.details = {
+      projectTitle : (document.getElementById('projectTitle') as HTMLInputElement ).value,
+      startDate : (document.getElementById('startDate') as HTMLInputElement).value,
+      endDate : (document.getElementById('endDate') as HTMLInputElement).value,
+      projectObjectives : (document.getElementById('projectObjectives') as HTMLInputElement).value,
+      projectManager : (document.getElementById('projectManager') as HTMLInputElement).value,
+      budgetInformation : (document.getElementById('budgetInformation') as HTMLInputElement).value,
+      projectScope : (document.getElementById('projectScope') as HTMLInputElement).value,
     };
-   this.addDoc(doc);
+   this.addDoc(this.doc);
   }
 
   addDoc(doc:any){
