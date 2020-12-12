@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DocsService } from 'src/app/sidebar/docs.service';
 
 @Component({
@@ -18,7 +18,12 @@ export class RequirementsPhaseComponent implements OnInit {
       name:"SRS",
       id:this.docsServices.getNumberOfDocs(),
       details:{
-        
+        intro:(<HTMLInputElement>document.getElementById("intro")).value,
+        purpose:(<HTMLInputElement>document.getElementById("purpose")).value,
+        audience:(<HTMLInputElement>document.getElementById("audience")).value,
+        overall:(<HTMLInputElement>document.getElementById("overall")).value,
+        features:(<HTMLInputElement>document.getElementById("features")).value,
+        Imagepath:(<HTMLInputElement>document.getElementById("FileUpload")).value
       }
 
     });
