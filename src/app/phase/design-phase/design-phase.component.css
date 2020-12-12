@@ -1,0 +1,64 @@
+
+#button-addon1{
+    border-color: #ced4da;
+}
+.btnn {
+    background-color: #F48224;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    position: relative;
+    border-radius: 0 !important;
+    border: none;
+    transition:all 0.3s ease 0s;
+}
+.btnn:hover,
+.btnn.active:hover{
+    color: #ffffff;
+}
+.btnn:before{
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: 0;
+    background-color:#2E0014;
+    width: 30%;
+    height: 4px;
+    transition:all 0.3s ease 0s;
+}
+.btnn:after{
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    right: 0;
+    background-color:#2E0014;
+    width: 30%;
+    height: 4px;
+    transition:all 0.3s ease 0s;
+}
+.btnn:hover:before,
+.btnn:hover:after,
+.btnn.active:before,
+.btnn.active:after{
+    width: 100%;
+}
+
+@media screen and (max-width: 575px){
+    .btnn{
+        margin-bottom: 50px !important;
+    }
+}
+#ReCAdd{
+    background-color:#198754 ;
+    margin-right: 20px;
+    padding-right: 20px;
+    text-align: center;
+}
+#ReCAdd::after{
+    background-color:#198754 ;
+}
+#ReCAdd::before{
+    background-color:#198754 ;
+}
+
