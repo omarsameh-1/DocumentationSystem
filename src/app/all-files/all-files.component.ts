@@ -6,8 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./all-files.component.css']
 })
 export class AllFilesComponent implements OnInit {
+ALL_FILES = [{
+   fileName: "UMLclass",
+   path: "./all-files/class.jpg"
+  },
+   {
+     fileName: "UMLusecase",
+     path: "./all-files/usecase.png"
+   },
+   {
+     fileName: "UMLactivity",
+     path: "./all-files/activity.png"
+   }
+] 
 
-  constructor() { }
+
+  constructor() { 
+    
+  }
+  
 
   ngOnInit(): void {
   }
