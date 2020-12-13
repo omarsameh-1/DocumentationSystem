@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {home} from '../model/home.model';
+import { DocsService } from 'src/app/sidebar/docs.service';
 
 @Component({
   selector: 'app-design-phase',
@@ -8,47 +8,43 @@ import {home} from '../model/home.model';
 })
 export class DesignPhaseComponent implements OnInit {
 
-  home=new home();
-  dataaray:any[]=[];
-  fileData:any=null;
-  fileName:any=null;
-  previewUrl:any=null;
-  constructor(){}
-  ngOnInit(){
-    this.home=new home();
-    this.dataaray.push(this.home);
-  }
-  addDocument(){
-    this.home=new home();
-    this.dataaray.push(this.home);
+  public files_: any[] = [{
+    id: 1,
+    fileName: '',
+    Path:''
+  }];
+  constructor() {
 
   }
-  
-  removeDocument(index:number){
-    this.dataaray.splice(index);
+
+  ngOnInit() {
+
   }
-  fileEvent(fileInput: any){
-    this.fileData = fileInput.target.files[0];
-     this.fileName = this.fileData.name;
-     this.preview();
+
+  addAddress() {
+    this.files_.push({
+      id: this.files_.length + 1,
+      fileName: '',
+      Path:''
+      
+    });
   }
-  preview() {
-    // Show preview 
-    var mimeType = this.fileData.type;
-    if (mimeType.match(/image\/*/) == null) {
-      return;
+
+  removeAddress(i: number) {
+    this.files_.splice(i, 1);
+  }
+  handleUpload(event:any){
+    for(let i=0;i<this.addAddress.length+1;i++){
+      this.files_[i].Path = event.target.value;
+      this.files_[i].fileName = event.target.files[i].name;
     }
+ }
+
  
-    var reader = new FileReader();      
-    reader.readAsDataURL(this.fileData); 
-    reader.onload = (_event) => { 
-      this.previewUrl = reader.result; 
-    }
-}
-  onsubmit(){
-    localStorage.setItem('home', this.home.file_); // setting
-    console.log(localStorage.getItem('home')); // getting
-    console.log(this.fileName);
+
+  logValue() {
+    console.log(this.files_);
+    
   }
 
 }
