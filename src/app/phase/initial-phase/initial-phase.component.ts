@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Doc } from 'src/app/model/doc.model';
 import { DocsService } from 'src/app/sidebar/docs.service';
 
 
@@ -9,9 +10,10 @@ import { DocsService } from 'src/app/sidebar/docs.service';
 })
 export class InitialPhaseComponent implements OnInit {
 
-doc = {
+doc:Doc = {
     id : this.docsService.getNumberOfDocs()+1,
     name : 'Project Charter',
+    type: 'doc',
     details :{}
   };
     
@@ -34,7 +36,7 @@ doc = {
    this.addDoc(this.doc);
   }
 
-  addDoc(doc:any){
+  addDoc(doc:Doc){
     this.docsService.addNewDoc(doc);
   }
 

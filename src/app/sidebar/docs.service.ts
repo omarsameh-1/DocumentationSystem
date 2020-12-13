@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
+import { Doc } from '../model/doc.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DocsService {
 
-  docs:{ id: number, name: string, details: {}}[] = [
-    {id: 1, name: "charter doc", details: {}},
-    {id: 2, name: "srs", details: {}},
-    {id: 3, name: "sds", details: {}} 
+  docs: Doc[] = [
+    {id: 1, name: "charter doc", type: "", details: {}},
+    {id: 2, name: "srs",type: "", details: {}},
+    {id: 3, name: "sds", type: "", details: {}} 
   ];
 
   constructor() { }
 
-  addNewDoc(doc: {id: number, name: string, details: {}}){
+  addNewDoc(doc: Doc){
     this.docs.push(doc);
   }
 

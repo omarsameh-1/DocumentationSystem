@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Doc } from '../model/doc.model';
 import { DocsService } from './docs.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { DocsService } from './docs.service';
 })
 export class SidebarComponent implements OnInit {
 
-  docs: {id: number, name: string, details: {}}[] = [];
+  docs: Doc[] = [];
 
   constructor(private docsService: DocsService) { }
 
@@ -16,7 +17,7 @@ export class SidebarComponent implements OnInit {
     this.docs = this.docsService.getDocs();
   }
 
-  addDoc(doc: {id: number, name: string, details: {}}){
+  addDoc(doc: Doc){
     this.docsService.addNewDoc(doc);
   }
 
