@@ -28,5 +28,17 @@ export class RequirementsPhaseComponent implements OnInit {
 
     });
   }
+  onGetFoucs(){
+    alert("Only images are allowed!");
+  }
+  checkInput(){
+    return ((<HTMLInputElement>document.getElementById("intro")).value &&
+      (<HTMLInputElement>document.getElementById("purpose")).value &&
+      (<HTMLInputElement>document.getElementById("audience")).value &&
+      (<HTMLInputElement>document.getElementById("overall")).value &&
+      (<HTMLInputElement>document.getElementById("features")).value &&
+      (<HTMLInputElement>document.getElementById("FileUpload")).value);
+  }
+  
 
 }
