@@ -6,11 +6,7 @@ import { Doc } from '../model/doc.model';
 })
 export class DocsService {
 
-  docs: Doc[] = [
-    {id: 1, name: "charter doc", type: "", details: {}},
-    {id: 2, name: "srs",type: "", details: {}},
-    {id: 3, name: "sds", type: "", details: {}} 
-  ];
+  docs: Doc[] = [];
 
   constructor() { }
 
@@ -30,12 +26,13 @@ export class DocsService {
     return this.docs;
   }
 
-  editDoc(id: number){
+  editDoc(id: number, updatedDoc: Doc){
     console.log("editing doc");
+    this.docs[id-1] = updatedDoc;
   }
 
   deleteDoc(id: number){
-    console.log("deleting doc");
+    this.docs.splice(id-1,1);
   }
 
 }
