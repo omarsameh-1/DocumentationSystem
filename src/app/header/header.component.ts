@@ -30,4 +30,8 @@ export class HeaderComponent implements OnInit {
   selectPhase(){
     this.phasesService.selectPhase(this.selectedPhase);
   }
+
+  setNumberOfDocs(n: number){
+    this.numberOfDocs = this.docsService.getNumberOfDocs();
+  }
 }

@@ -9,7 +9,7 @@ import { DocsService } from 'src/app/sidebar/docs.service';
 })
 export class DesignPhaseComponent implements OnInit {
 
-  public files_: Doc[] = [];
+  public files_: Doc[] = new Array<Doc>();
   constructor(private docsService: DocsService) {
 
   }
@@ -19,15 +19,15 @@ export class DesignPhaseComponent implements OnInit {
   }
 
   AddDocument() {
-    this.files_.push({
-      id: this.files_.length + 1,
+    let doc = <Doc>{
+      id: 0,
       name: '',
       type:'image',
       details:{
         path:''
       }
-      
-    });
+    }
+    this.files_.push(doc);
   }
 
   RemoveDocument(i: number) {

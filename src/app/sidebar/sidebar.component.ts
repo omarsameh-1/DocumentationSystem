@@ -17,9 +17,9 @@ export class SidebarComponent implements OnInit {
     this.docs = this.docsService.getDocs();
   }
 
-  addDoc(doc: Doc){
-    this.docsService.addNewDoc(doc);
-  }
+  // addDoc(doc: Doc){
+  //   this.docsService.addNewDoc(doc);
+  // }
 
   deleteDoc(id: number){
     this.docsService.deleteDoc(id);

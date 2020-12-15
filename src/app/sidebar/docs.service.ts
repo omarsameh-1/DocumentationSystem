@@ -11,7 +11,14 @@ export class DocsService {
   constructor() { }
 
   addNewDoc(doc: Doc){
+    if(this.docs.length == 0){
+      doc.id = 1;
+    }else{
+      doc.id = this.docs[this.docs.length-1].id + 1;
+    }
+
     this.docs.push(doc);
+    console.log(this.docs);
   }
 
   getDoc(id: number){
@@ -28,11 +35,17 @@ export class DocsService {
 
   editDoc(id: number, updatedDoc: Doc){
     console.log("editing doc");
-    this.docs[id-1] = updatedDoc;
+    let index = this.getIndex(id);
+    this.docs[index] = updatedDoc;
   }
 
   deleteDoc(id: number){
-    this.docs.splice(id-1,1);
+    let index = this.getIndex(id);
+    this.docs.splice(index,1);
+  }
+
+  getIndex(id: number){
+    return this.docs.findIndex(i => i.id == id);
   }
 
 }
