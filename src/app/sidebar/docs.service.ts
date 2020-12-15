@@ -6,16 +6,19 @@ import { Doc } from '../model/doc.model';
 })
 export class DocsService {
 
-  docs: Doc[] = [
-    {id: 1, name: "charter doc", type: "", details: {}},
-    {id: 2, name: "srs",type: "", details: {}},
-    {id: 3, name: "sds", type: "", details: {}} 
-  ];
+  docs: Doc[] = [];
 
   constructor() { }
 
   addNewDoc(doc: Doc){
+    if(this.docs.length == 0){
+      doc.id = 1;
+    }else{
+      doc.id = this.docs[this.docs.length-1].id + 1;
+    }
+
     this.docs.push(doc);
+    console.log(this.docs);
   }
 
   getDoc(id: number){
@@ -30,12 +33,19 @@ export class DocsService {
     return this.docs;
   }
 
-  editDoc(id: number){
+  editDoc(id: number, updatedDoc: Doc){
     console.log("editing doc");
+    let index = this.getIndex(id);
+    this.docs[index] = updatedDoc;
   }
 
   deleteDoc(id: number){
-    console.log("deleting doc");
+    let index = this.getIndex(id);
+    this.docs.splice(index,1);
+  }
+
+  getIndex(id: number){
+    return this.docs.findIndex(i => i.id == id);
   }
 
 }

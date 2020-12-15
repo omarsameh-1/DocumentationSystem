@@ -17,22 +17,23 @@ export class SidebarComponent implements OnInit {
     this.docs = this.docsService.getDocs();
   }
 
-  addDoc(doc: Doc){
-    this.docsService.addNewDoc(doc);
-  }
+  // addDoc(doc: Doc){
+  //   this.docsService.addNewDoc(doc);
+  // }
 
   deleteDoc(id: number){
     this.docsService.deleteDoc(id);
   }
 
-  editDoc(id: number){
-    this.docsService.editDoc(id);
+  editDoc(id: number, editedDoc:Doc){
+    this.docsService.editDoc(id, editedDoc);
   }
   
-  showDoc(event: any){
-    let id = event.target.id;
+  showDoc(id: number){
     let doc = this.docsService.getDoc(id);
     //Show doc on page
+    console.log(`Here you go: ${doc}`);
+    
   }
 
   getNumberOfDocs(){
