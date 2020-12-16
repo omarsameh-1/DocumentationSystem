@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Doc } from '../model/doc.model';
 import { DocsService } from './docs.service';
 
@@ -11,15 +12,19 @@ export class SidebarComponent implements OnInit {
 
   docs: Doc[] = [];
 
-  constructor(private docsService: DocsService) { }
+  constructor(private docsService: DocsService, private router:Router) { }
 
   ngOnInit(): void {
     this.docs = this.docsService.getDocs();
   }
 
-  // addDoc(doc: Doc){
-  //   this.docsService.addNewDoc(doc);
-  // }
+  getImageDocs(){
+    return this.docsService.getDocs().filter(doc => doc.type == "image");
+  }
+
+  isAllFilesRoute(){
+    return this.router.url === '/all';
+  }
 
   deleteDoc(id: number){
     this.docsService.deleteDoc(id);

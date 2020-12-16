@@ -1,6 +1,11 @@
 <div>
   <ul class="list-group" *ngIf="getNumberOfDocs() !== 0">
     <li class="list-group-item active">Documents</li>
-    <li *ngFor="let doc of docs" id="{{doc.id}}" class="list-group-item" (click)="showDoc(doc.id)">{{doc.name}} <button class="btn btn-danger" (click)="deleteDoc(doc.id)">Delete</button></li>
+    <ng-container *ngIf="!isAllFilesRoute(); else allFiles">
+      <li *ngFor="let doc of docs" id="{{doc.id}}" class="list-group-item" (click)="showDoc(doc.id)">{{doc.name}} <button class="btn btn-danger" (click)="deleteDoc(doc.id)">Delete</button></li>
+    </ng-container>
+    <ng-template #allFiles>
+      <li *ngFor="let doc of getImageDocs()" id="{{doc.id}}" class="list-group-item" (click)="showDoc(doc.id)">{{doc.name}} <button class="btn btn-danger" (click)="deleteDoc(doc.id)">Delete</button></li>
+    </ng-template>
   </ul>
 </div>

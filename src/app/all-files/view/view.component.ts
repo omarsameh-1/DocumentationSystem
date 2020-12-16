@@ -18,8 +18,6 @@ export class ViewComponent implements OnInit {
 
   viewDoc(){
     this.src = this.docsService.getDoc(this.chosenDoc).details.path!;
-    
-
   }
 
 }
