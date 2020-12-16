@@ -20,6 +20,11 @@ export class PhaseComponent implements OnInit {
     return this.phaseService.getPhase();
   }
 
+  //close button
+  close(){
+    this.phaseService.selectPhase(0);
+  }
+
   editPhase(doc: Doc){
     
   }

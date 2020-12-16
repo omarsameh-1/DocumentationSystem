@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Doc } from '../model/doc.model';
-import { DocsService } from '../sidebar/docs.service';
 
 @Component({
   selector: 'app-all-files',
@@ -8,10 +6,8 @@ import { DocsService } from '../sidebar/docs.service';
   styleUrls: ['./all-files.component.css']
 })
 export class AllFilesComponent implements OnInit {
-
-  docs: Doc[] = [];
   
-  constructor(private docsService:DocsService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

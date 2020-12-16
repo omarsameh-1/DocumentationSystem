@@ -37,7 +37,7 @@ export class SidebarComponent implements OnInit {
   showDoc(id: number){
     let doc = this.docsService.getDoc(id);
     //Show doc on page
-    console.log(`Here you go: ${doc}`);
+    console.log(`Here you go: ${doc.id} -> ${doc.name}`);
     
   }
 

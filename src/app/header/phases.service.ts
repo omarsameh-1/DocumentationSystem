@@ -27,7 +27,7 @@ export class PhasesService {
 
   selectPhase(phaseId: number){
     this.chosenPhase = phaseId;
-    console.log(`phase chosen : ${this.phases[phaseId-1].name}`);
+    // console.log(`phase chosen : ${this.phases[phaseId-1].name}`);
   }
 
 }

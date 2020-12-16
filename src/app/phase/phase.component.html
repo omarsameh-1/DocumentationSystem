@@ -1,4 +1,5 @@
 <div *ngIf="getPhaseView() !== 0">
+    <button *ngIf="getPhaseView() == 1 || getPhaseView() == 2 || getPhaseView() == 3" class="btn btn-danger" (click)="close()">Close</button>
     <app-initial-phase *ngIf="getPhaseView() == 1"></app-initial-phase>
     <app-requirements-phase *ngIf="getPhaseView() == 2"></app-requirements-phase>
     <app-design-phase *ngIf="getPhaseView() == 3"></app-design-phase>
