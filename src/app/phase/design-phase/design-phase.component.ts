@@ -1,3 +1,4 @@
+import { collectExternalReferences } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Doc } from 'src/app/model/doc.model';
 import { DocsService } from 'src/app/sidebar/docs.service';
@@ -9,46 +10,44 @@ import { DocsService } from 'src/app/sidebar/docs.service';
 })
 export class DesignPhaseComponent implements OnInit {
 
-  public files_: Doc[] = new Array<Doc>();
+  files_: string[] = [];
+  toAdd:Doc[] = [];
+
   constructor(private docsService: DocsService) {
 
   }
 
   ngOnInit() {
-    this.files_ = this.docsService.getDocs();
   }
 
   AddDocument() {
-    let doc = <Doc>{
-      id: 0,
-      name: '',
-      type:'image',
-      details:{
-        path:''
-      }
-    }
-    this.files_.push(doc);
+    // doc means image as a doc for design 
+    this.files_.push('');
   }
 
   RemoveDocument(i: number) {
     this.files_.splice(i, 1);
   }
   handleUpload(event:any){
-    for(let i=0;i<this.files_.length+1;i++){
-      this.files_[i].details = {
-        path: event.target.value
-      };
-      this.files_[i].name = event.target.files[i].name;
+    let doc = <Doc>{
+      id: 0,
+      name: event.target.files[0].name,
+      type:'image',
+      details:{
+      path: event.target.value
+      }
     }
+    this.toAdd.push(doc);
  }
 
  
 
   Save() {
-    this.files_.forEach((file)=>{
-      console.log(file);
-      this.docsService.addNewDoc(file);
+    this.toAdd.forEach((file)=>{
+      this.docsService.addNewDoc(file);      
     });
+    this.files_ = [];
+    this.toAdd = [];
   }
 
 }
