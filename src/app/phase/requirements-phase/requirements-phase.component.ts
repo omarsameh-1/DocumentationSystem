@@ -15,12 +15,11 @@ export class RequirementsPhaseComponent implements OnInit {
   }
 
   saveDoc(){
-    
-    
     let doc:Doc = <Doc>{
       id: 0,
       name: "SRS",
       type: "doc",
+      phase: 2,
       details:{
         intro:(<HTMLInputElement>document.getElementById("intro")).value,
         purpose:(<HTMLInputElement>document.getElementById("purpose")).value,
@@ -37,6 +36,7 @@ export class RequirementsPhaseComponent implements OnInit {
       id: 0,
       name: "Use Case",
       type: "image",
+      phase: 2,
       details:{
         path:(<HTMLInputElement>document.getElementById("FileUpload")).value
       }

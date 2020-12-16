@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PhasesService } from '../header/phases.service';
 import { Doc } from '../model/doc.model';
 import { DocsService } from './docs.service';
 
@@ -12,7 +13,7 @@ export class SidebarComponent implements OnInit {
 
   docs: Doc[] = [];
 
-  constructor(private docsService: DocsService, private router:Router) { }
+  constructor(private docsService: DocsService, private router:Router,private phaseService: PhasesService) { }
 
   ngOnInit(): void {
     this.docs = this.docsService.getDocs();
@@ -34,11 +35,12 @@ export class SidebarComponent implements OnInit {
     this.docsService.editDoc(id, editedDoc);
   }
   
-  showDoc(id: number){
+  async showDoc(id: number){
     let doc = this.docsService.getDoc(id);
     //Show doc on page
-    console.log(`Here you go: ${doc.id} -> ${doc.name}`);
-    
+    console.log(`Here you go: ${doc.id} -> ${doc.name}`);    
+    this.phaseService.selectPhase(doc.phase);
+    setTimeout(() => this.docsService.fillForm(doc.phase,doc),500);
   }
 
   getNumberOfDocs(){

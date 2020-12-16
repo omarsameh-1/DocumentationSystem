@@ -20,6 +20,7 @@ export class InitialPhaseComponent implements OnInit {
       id: 0,
       name: 'Project Charter',
       type: 'doc',
+      phase : 1,
       details: {
         projectTitle : (document.getElementById('projectTitle') as HTMLInputElement ).value,
         startDate : (document.getElementById('startDate') as HTMLInputElement).value,

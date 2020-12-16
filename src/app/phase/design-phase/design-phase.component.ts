@@ -33,8 +33,9 @@ export class DesignPhaseComponent implements OnInit {
       id: 0,
       name: event.target.files[0].name,
       type:'image',
+      phase: 3,
       details:{
-      path: event.target.value
+        path: event.target.value
       }
     }
     this.toAdd.push(doc);
