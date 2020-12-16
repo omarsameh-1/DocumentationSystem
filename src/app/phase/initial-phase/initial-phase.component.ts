@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { PhasesService } from 'src/app/header/phases.service';
 import { Doc } from 'src/app/model/doc.model';
 import { DocsService } from 'src/app/sidebar/docs.service';
 
-
+// works fine need only validation 
 @Component({
   selector: 'app-initial-phase',
   templateUrl: './initial-phase.component.html',
@@ -10,7 +11,7 @@ import { DocsService } from 'src/app/sidebar/docs.service';
 })
 export class InitialPhaseComponent implements OnInit {
     
-  constructor(private docsService:DocsService) { }
+  constructor(private docsService:DocsService , private phaseServices:PhasesService) { }
 
   ngOnInit(): void {
   }
@@ -35,7 +36,8 @@ export class InitialPhaseComponent implements OnInit {
   }
 
   addDoc(doc:Doc){
-    this.docsService.addNewDoc(doc);
+    this.docsService.addNewDoc(doc);  
+
   }
 
 }

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { PhasesService } from '../header/phases.service';
 import { Doc } from '../model/doc.model';
 
 @Injectable({
@@ -8,7 +9,7 @@ export class DocsService {
 
   docs: Doc[] = [];
 
-  constructor() { }
+  constructor(private phaseService:PhasesService) { }
 
   addNewDoc(doc: Doc) {
     let message = "Added sucessfully";
@@ -26,7 +27,12 @@ export class DocsService {
     
     this.docs.push(doc);
     alert(message);
+    this.close();
     console.log(this.docs);
+  }
+
+  close(){
+    this.phaseService.selectPhase(0);
   }
 
   getDoc(id: number) {
