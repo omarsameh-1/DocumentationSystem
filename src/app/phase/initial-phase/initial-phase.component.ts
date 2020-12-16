@@ -17,7 +17,7 @@ export class InitialPhaseComponent implements OnInit {
 
   getDoc(){
     let doc:Doc = <Doc>{
-      id: 0,
+      id: parseInt((document.getElementById('id') as HTMLInputElement ).value),
       name: 'Project Charter',
       type: 'doc',
       phase : 1,

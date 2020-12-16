@@ -16,7 +16,7 @@ export class RequirementsPhaseComponent implements OnInit {
 
   saveDoc(){
     let doc:Doc = <Doc>{
-      id: 0,
+      id: parseInt((document.getElementById('id') as HTMLInputElement ).value),
       name: "SRS",
       type: "doc",
       phase: 2,
@@ -33,7 +33,7 @@ export class RequirementsPhaseComponent implements OnInit {
 
 
     let img: Doc =<Doc>{
-      id: 0,
+      id: parseInt((document.getElementById('id') as HTMLInputElement ).value),
       name: "Use Case",
       type: "image",
       phase: 2,

@@ -11,18 +11,27 @@ export class DocsService {
   constructor() { }
 
   addNewDoc(doc: Doc) {
+    let message = "Added sucessfully";
+    if(this.getDoc(doc.id)){
+      this.deleteDoc(doc.id);
+      message = "Updated sucesfully"
+    }
+
     if (this.docs.length == 0) {
       doc.id = 1;
     } else {
       doc.id = this.docs[this.docs.length - 1].id + 1;
     }
 
+    
     this.docs.push(doc);
+    alert(message);
     console.log(this.docs);
   }
 
   getDoc(id: number) {
-    return this.docs[id - 1];
+    let index = this.getIndex(id);
+    return this.docs[index];
   }
 
   getNumberOfDocs() {
@@ -53,6 +62,7 @@ export class DocsService {
     console.log(document);
     switch (phaseId) {
       case 1:
+        (document.getElementById('id') as HTMLInputElement).value = doc.id;
         (document.getElementById('projectTitle') as HTMLInputElement).value = doc.details.projectTitle;
         (document.getElementById('startDate') as HTMLInputElement).value = doc.details.startDate;
         (document.getElementById('endDate') as HTMLInputElement).value = doc.details.endDate;
@@ -62,6 +72,7 @@ export class DocsService {
         (document.getElementById('projectScope') as HTMLInputElement).value = doc.details.projectScope;
         break;
       case 2:
+        (document.getElementById('id') as HTMLInputElement).value = doc.id;
         (<HTMLInputElement>document.getElementById("intro")).value = doc.details.intro;
         (<HTMLInputElement>document.getElementById("purpose")).value = doc.details.purpose;
         (<HTMLInputElement>document.getElementById("audience")).value = doc.details.audience;
