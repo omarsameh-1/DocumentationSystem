@@ -35,12 +35,12 @@ export class SidebarComponent implements OnInit {
     this.docsService.editDoc(id, editedDoc);
   }
   
-  async showDoc(id: number){
+  showDoc(id: number){
     let doc = this.docsService.getDoc(id);
     //Show doc on page
     console.log(`Here you go: ${doc.id} -> ${doc.name}`);    
     this.phaseService.selectPhase(doc.phase);
-    setTimeout(() => this.docsService.fillForm(doc.phase,doc),500);
+    setTimeout(() => this.docsService.fillForm(doc.phase,doc),100);
   }
 
   getNumberOfDocs(){
