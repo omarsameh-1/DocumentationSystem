@@ -88,6 +88,7 @@ export class DocsService {
         (<HTMLInputElement>document.getElementById("audience")).value = doc.details.audience;
         (<HTMLInputElement>document.getElementById("overall")).value = doc.details.overall;
         (<HTMLInputElement>document.getElementById("features")).value = doc.details.features;
+        (<HTMLInputElement>document.getElementById("FileUpload")).value = doc.details.path;
         break;
       case 3:
         //TODO LATER
@@ -107,7 +108,7 @@ export class DocsService {
         }
         break;
       case 2:
-        if(!doc.details.intro||!doc.details.purpose||!doc.details.audience||!doc.details.overall||!doc.details.features){
+        if(!doc.details.intro||!doc.details.purpose||!doc.details.audience||!doc.details.overall||!doc.details.features||!doc.details.path){
           message = "please set all fields"; 
         }
         break;

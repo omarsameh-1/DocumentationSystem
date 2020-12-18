@@ -18,7 +18,7 @@ export class RequirementsPhaseComponent implements OnInit {
     let doc:Doc = <Doc>{
       id: parseInt((document.getElementById('id') as HTMLInputElement ).value),
       name: "SRS",
-      type: "doc",
+      type: "doc-image",
       phase: 2,
       details:{
         intro:(<HTMLInputElement>document.getElementById("intro")).value,
@@ -26,26 +26,15 @@ export class RequirementsPhaseComponent implements OnInit {
         audience:(<HTMLInputElement>document.getElementById("audience")).value,
         overall:(<HTMLInputElement>document.getElementById("overall")).value,
         features:(<HTMLInputElement>document.getElementById("features")).value,
-        // Imagepath:(<HTMLInputElement>document.getElementById("FileUpload")).value
+        path:(<HTMLInputElement>document.getElementById("FileUpload")).value
       }
     }
     this.docsServices.addNewDoc(doc);
 
-
-    let img: Doc =<Doc>{
-      id: parseInt((document.getElementById('id') as HTMLInputElement ).value),
-      name: "Use Case",
-      type: "image",
-      phase: 2,
-      details:{
-        path:(<HTMLInputElement>document.getElementById("FileUpload")).value
-      }
-    } 
-    this.docsServices.addNewDoc(img);
   }
 
   onGetFoucs(){
-    // alert("Only images are allowed!");
+   
   }
 
   checkInput(){
