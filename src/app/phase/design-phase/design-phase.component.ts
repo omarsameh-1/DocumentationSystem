@@ -12,6 +12,7 @@ export class DesignPhaseComponent implements OnInit {
 
   files_: string[] = [];
   toAdd:Doc[] = [];
+  imgPath:string="";
 
   constructor(private docsService: DocsService) {
 
@@ -28,6 +29,20 @@ export class DesignPhaseComponent implements OnInit {
   RemoveDocument(i: number) {
     this.files_.splice(i, 1);
   }
+//CONTINUE TOMORROW
+  docImage(event: any){
+    if(event.target.files){
+      const reader = new FileReader();
+      reader.readAsDataURL(event.target.files[0]);
+      reader.onload=(event:any)=>{
+        this.imgPath = event.target.result;
+      }
+      console.log(this.imgPath);
+
+    }
+    this.handleUpload(event);
+  }
+
   handleUpload(event:any){
     let doc = <Doc>{
       id: parseInt((document.getElementById('id') as HTMLInputElement ).value),
@@ -35,14 +50,12 @@ export class DesignPhaseComponent implements OnInit {
       type:'image',
       phase: 3,
       details:{
-        path: event.target.value
+        path: this.imgPath
       }
     }
     this.toAdd.push(doc);
  }
-
- 
-
+////////////////////////////////////////////////////////////
   Save() {
     this.toAdd.forEach((file)=>{
       this.docsService.addNewDoc(file);      

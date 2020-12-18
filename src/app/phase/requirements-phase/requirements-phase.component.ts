@@ -9,9 +9,20 @@ import { DocsService } from 'src/app/sidebar/docs.service';
 })
 export class RequirementsPhaseComponent implements OnInit {
 
+  imgPath : string = "";
   constructor(private docsServices:DocsService) { }
 
   ngOnInit(): void {
+  }
+
+  docImage(event: any){
+    if(event.target.files){
+      const reader = new FileReader();
+      reader.readAsDataURL(event.target.files[0]);
+      reader.onload=(event:any)=>{
+        this.imgPath =event.target.result;
+      }
+    }
   }
 
   saveDoc(){
@@ -26,25 +37,11 @@ export class RequirementsPhaseComponent implements OnInit {
         audience:(<HTMLInputElement>document.getElementById("audience")).value,
         overall:(<HTMLInputElement>document.getElementById("overall")).value,
         features:(<HTMLInputElement>document.getElementById("features")).value,
-        path:(<HTMLInputElement>document.getElementById("FileUpload")).value
+        path: this.imgPath
       }
     }
     this.docsServices.addNewDoc(doc);
 
   }
-
-  onGetFoucs(){
-   
-  }
-
-  checkInput(){
-    return ((<HTMLInputElement>document.getElementById("intro")).value &&
-      (<HTMLInputElement>document.getElementById("purpose")).value &&
-      (<HTMLInputElement>document.getElementById("audience")).value &&
-      (<HTMLInputElement>document.getElementById("overall")).value &&
-      (<HTMLInputElement>document.getElementById("features")).value &&
-      (<HTMLInputElement>document.getElementById("FileUpload")).value);
-  }
-  
 
 }
