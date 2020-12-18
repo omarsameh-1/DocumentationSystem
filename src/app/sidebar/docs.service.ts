@@ -13,6 +13,7 @@ export class DocsService {
 
   addNewDoc(doc: Doc) {
     let message = "Added sucessfully";
+    let errorMessage = this.validate(doc);
     if(this.getDoc(doc.id)){
       this.deleteDoc(doc.id);
       message = "Updated sucesfully"
@@ -24,7 +25,10 @@ export class DocsService {
       doc.id = this.docs[this.docs.length - 1].id + 1;
     }
 
-    
+    if(errorMessage){
+      alert(errorMessage);
+      return;
+    }
     this.docs.push(doc);
     alert(message);
     this.close();
@@ -92,5 +96,29 @@ export class DocsService {
         console.log("An error happened");
         break;
     }
+  }
+  
+  validate(doc:any){
+    let message = "";
+    switch (doc.phase) {
+      case 1:
+        if(!doc.details.projectTitle||!doc.details.endDate||!doc.details.projectObjectives||!doc.details.projectManager||!doc.details.budgetInformation||!doc.details.projectScope||!doc.details.startDate){
+          message = "please set all fields"; 
+        }
+        break;
+      case 2:
+        if(!doc.details.intro||!doc.details.purpose||!doc.details.audience||!doc.details.overall||!doc.details.features){
+          message = "please set all fields"; 
+        }
+        break;
+      case 3:
+        //TODO LATER
+        break;
+      default:
+        console.log("An error happened");
+        break;
+    }
+    return message;
+
   }
 }
