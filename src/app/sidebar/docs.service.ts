@@ -104,16 +104,19 @@ export class DocsService {
     switch (doc.phase) {
       case 1:
         if(!doc.details.projectTitle||!doc.details.endDate||!doc.details.projectObjectives||!doc.details.projectManager||!doc.details.budgetInformation||!doc.details.projectScope||!doc.details.startDate){
-          message = "please set all fields"; 
+          message = "Please fill all fields";
         }
         break;
       case 2:
         if(!doc.details.intro||!doc.details.purpose||!doc.details.audience||!doc.details.overall||!doc.details.features||!doc.details.path){
-          message = "please set all fields"; 
+          message = "Please fill all fields"; 
         }
         break;
       case 3:
-        //TODO LATER
+        // //TO TEST
+        // if(!doc.details.path){
+        //   message = "Please fill all fields";
+        // }
         break;
       default:
         console.log("An error happened");
