@@ -10,6 +10,7 @@ import { DocsService } from 'src/app/sidebar/docs.service';
 })
 export class DesignPhaseComponent implements OnInit {
 
+  nameEntered: boolean = false;
   files_: string[] = [""];
   toAdd:Doc[] = [];
   imgPath:string[]=[];
@@ -19,6 +20,14 @@ export class DesignPhaseComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  inputToggle(){
+    if((document.getElementById('fileName') as HTMLInputElement ).value != ""){
+      this.nameEntered = true;
+    } else {
+      this.nameEntered = false;
+    }
   }
 
   AddDocument() {
@@ -38,17 +47,16 @@ export class DesignPhaseComponent implements OnInit {
       reader.readAsDataURL(event.target.files[0]);
       reader.onload=(event:any)=>{
         this.imgPath.push(event.target.result);
-        
       }
-
     }
     this.handleUpload(event);
   }
 
   handleUpload(event:any){
+    console.log((document.getElementById('fileName') as HTMLInputElement ).value);
     let doc = <Doc>{
       id: parseInt((document.getElementById('id') as HTMLInputElement ).value),
-      name: (document.getElementById('fileName') as HTMLInputElement ).value,
+      name: ((document.getElementById('fileName') as HTMLInputElement ).value === "" ? event.target.files[0].name : (document.getElementById('fileName') as HTMLInputElement ).value),
       type:'image',
       phase: 3,
       details:{}
@@ -60,13 +68,18 @@ export class DesignPhaseComponent implements OnInit {
     for(let i = 0; i < this.toAdd.length; i++){
       this.toAdd[i].details.path = this.imgPath[i];
     }
+    if(this.toAdd.length == 0){
+      alert("Fill all fields");
+      return;
+    }
 
-    // if(!this.toAdd[0].details.path){
-    //   alert("asdad");
-    // }
     this.toAdd.forEach((file)=>{
-      
-      this.docsService.addNewDoc(file);      
+      if(this.docsService.validate(file) == ""){
+        this.docsService.addNewDoc(file);
+      } else {
+        alert("Fill all fields");
+        return;
+      }
     });
     this.files_ = [""];
     this.toAdd = [];
