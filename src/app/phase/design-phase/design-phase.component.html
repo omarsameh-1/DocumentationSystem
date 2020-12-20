@@ -20,6 +20,7 @@
                             <input type="text" name="fileName" id="fileName" placeholder="Enter Diagram Name" (change)="inputToggle()">
                             <input type="file" class="btnn form-control" name="file" [disabled]="!nameEntered" id="InpuField"
                             (change)="docImage($event)" accept="image/x-png,image/gif,image/jpeg" />
+                            <input type="hidden" id="hiddenImage">
                             <img class="card-img-top" [src]="imgPath[i]" alt="">
                         </div>
                     </div>

@@ -95,6 +95,7 @@ export class DocsService {
         break;
       case 3:
         //TODO LATER
+        (<HTMLInputElement>document.getElementById("fileName")).value = doc.name;
         (<HTMLInputElement>document.getElementById("InpuField")).value = doc.details.path;
         break;
       default:
