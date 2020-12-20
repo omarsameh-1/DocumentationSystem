@@ -14,6 +14,12 @@ export class DocsService {
   addNewDoc(doc: Doc) {
     let message = "Added sucessfully";
     let errorMessage = this.validate(doc);
+   
+    if(errorMessage){
+      alert(errorMessage);
+      return;
+    }
+
     if(this.getDoc(doc.id)){
       this.deleteDoc(doc.id);
       message = "Updated sucesfully"
@@ -25,10 +31,6 @@ export class DocsService {
       doc.id = this.docs[this.docs.length - 1].id + 1;
     }
 
-    if(errorMessage){
-      alert(errorMessage);
-      return;
-    }
     this.docs.push(doc);
     alert(message);
     this.close();
@@ -115,9 +117,6 @@ export class DocsService {
         break;
       case 3:
         // //TO TEST
-        // if(!doc.details.path){
-        //   message = "Please fill all fields";
-        // }
         break;
       default:
         console.log("An error happened");
