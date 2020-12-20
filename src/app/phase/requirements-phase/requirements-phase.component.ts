@@ -21,6 +21,7 @@ export class RequirementsPhaseComponent implements OnInit {
       reader.readAsDataURL(event.target.files[0]);
       reader.onload=(event:any)=>{
         this.imgPath =event.target.result;
+        (<HTMLInputElement>document.getElementById("hiddenImage")).value = this.imgPath;
       }
     }
   }
@@ -37,7 +38,8 @@ export class RequirementsPhaseComponent implements OnInit {
         audience:(<HTMLInputElement>document.getElementById("audience")).value,
         overall:(<HTMLInputElement>document.getElementById("overall")).value,
         features:(<HTMLInputElement>document.getElementById("features")).value,
-        path: this.imgPath
+        // path: this.imgPath
+        path : (<HTMLInputElement>document.getElementById("hiddenImage")).value
       }
     }
     this.docsServices.addNewDoc(doc);

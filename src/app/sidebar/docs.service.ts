@@ -90,7 +90,8 @@ export class DocsService {
         (<HTMLInputElement>document.getElementById("audience")).value = doc.details.audience;
         (<HTMLInputElement>document.getElementById("overall")).value = doc.details.overall;
         (<HTMLInputElement>document.getElementById("features")).value = doc.details.features;
-        (<HTMLInputElement>document.getElementById("FileUpload")).value = doc.details.path;
+        (<HTMLInputElement>document.getElementById("hiddenImage")).value = doc.details.path;
+        (<HTMLInputElement>document.getElementById("img")).src = doc.details.path;
         break;
       case 3:
         //TODO LATER
