@@ -92,6 +92,7 @@ export class DocsService {
         break;
       case 3:
         //TODO LATER
+        (<HTMLInputElement>document.getElementById("InpuField")).value = doc.details.path;
         break;
       default:
         console.log("An error happened");

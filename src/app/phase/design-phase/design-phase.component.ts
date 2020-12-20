@@ -48,7 +48,7 @@ export class DesignPhaseComponent implements OnInit {
   handleUpload(event:any){
     let doc = <Doc>{
       id: parseInt((document.getElementById('id') as HTMLInputElement ).value),
-      name: event.target.files[0].name,
+      name: (document.getElementById('fileName') as HTMLInputElement ).value,
       type:'image',
       phase: 3,
       details:{}
