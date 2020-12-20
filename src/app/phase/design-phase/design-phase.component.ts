@@ -61,7 +61,11 @@ export class DesignPhaseComponent implements OnInit {
       this.toAdd[i].details.path = this.imgPath[i];
     }
 
+    // if(!this.toAdd[0].details.path){
+    //   alert("asdad");
+    // }
     this.toAdd.forEach((file)=>{
+      
       this.docsService.addNewDoc(file);      
     });
     this.files_ = [""];

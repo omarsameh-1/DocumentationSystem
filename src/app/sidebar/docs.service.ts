@@ -113,7 +113,9 @@ export class DocsService {
         }
         break;
       case 3:
-        // //TO TEST
+          // if(!doc.details){
+          //   message = "please fill all fields";
+          // }
         // if(!doc.details.path){
         //   message = "Please fill all fields";
         // }

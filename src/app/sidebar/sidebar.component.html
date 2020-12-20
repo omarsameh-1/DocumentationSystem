@@ -5,7 +5,7 @@
       <li *ngFor="let doc of docs" id="{{doc.id}}" class="list-group-item" (click)="showDoc(doc.id)">{{doc.name}} <button class="btn btn-danger" (click)="deleteDoc(doc.id)">Delete</button></li>
     </ng-container>
     <ng-template #allFiles>
-      <li *ngFor="let doc of getImageDocs()" id="{{doc.id}}" class="list-group-item" (click)="showDoc(doc.id)">{{doc.name}} <button class="btn btn-danger" (click)="deleteDoc(doc.id)">Delete</button></li>
+      <li *ngFor="let doc of getImageDocs()" id="{{doc.id}}" class="list-group-item selected" (click)="showDoc(doc.id)">{{doc.name}} <button class="btn btn-danger" (click)="deleteDoc(doc.id)">Delete</button></li>
     </ng-template>
   </ul>
 </div>
