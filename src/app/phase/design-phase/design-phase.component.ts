@@ -10,7 +10,7 @@ import { DocsService } from 'src/app/sidebar/docs.service';
 })
 export class DesignPhaseComponent implements OnInit {
 
-  files_: string[] = [];
+  files_: string[] = [""];
   toAdd:Doc[] = [];
   imgPath:string[]=[];
 
@@ -38,6 +38,7 @@ export class DesignPhaseComponent implements OnInit {
       reader.readAsDataURL(event.target.files[0]);
       reader.onload=(event:any)=>{
         this.imgPath.push(event.target.result);
+        
       }
 
     }
@@ -63,7 +64,7 @@ export class DesignPhaseComponent implements OnInit {
     this.toAdd.forEach((file)=>{
       this.docsService.addNewDoc(file);      
     });
-    this.files_ = [];
+    this.files_ = [""];
     this.toAdd = [];
   }
 
