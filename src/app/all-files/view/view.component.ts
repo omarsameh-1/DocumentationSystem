@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DocsService } from 'src/app/sidebar/docs.service';
+import { AllFilesViewService } from '../all-files-view.service';
 
 @Component({
   selector: 'app-all-view',
@@ -9,15 +9,15 @@ import { DocsService } from 'src/app/sidebar/docs.service';
 export class ViewComponent implements OnInit {
  
   src :string = '';
-  chosenDoc: number = 0;
 
-  constructor(private docsService: DocsService ) { }
+  constructor(private allFilesViewService: AllFilesViewService) { }
 
   ngOnInit(): void {
   }
 
   viewDoc(){
-    this.src = this.docsService.getDoc(this.chosenDoc).details.path!;
+    this.src = this.allFilesViewService.viewDoc();
+    console.log(`src is ${this.src}`);
   }
 
 }

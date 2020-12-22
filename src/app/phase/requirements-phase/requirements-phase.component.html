@@ -38,7 +38,9 @@
     <div class="form-group row">
       <div class="col-sm-4">
        <label for="usecase" class="col-sm-4 col-form-label">Usecase</label>
-        <input type="file" accept='image/*' id="FileUpload" class="btn btn-primary" (blur)="onGetFoucs()" ><br>
+        <input type="file" accept='image/*' id="FileUpload" class="btn btn-primary" (change)="docImage($event)" ><br>
+        <input type="hidden" id="hiddenImage">
+        <img class="card-img-top" id="img" [src]="imgPath" alt="">
       </div>
     </div>
     <div class="form-group row">

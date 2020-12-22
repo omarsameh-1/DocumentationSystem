@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AllFilesViewService } from '../all-files/all-files-view.service';
 import { PhasesService } from '../header/phases.service';
 import { Doc } from '../model/doc.model';
 import { DocsService } from './docs.service';
@@ -13,14 +14,17 @@ export class SidebarComponent implements OnInit {
 
   docs: Doc[] = [];
 
-  constructor(private docsService: DocsService, private router:Router,private phaseService: PhasesService) { }
+  constructor(private docsService: DocsService, private router:Router,private phaseService: PhasesService, private allFilesViewService: AllFilesViewService) { }
 
   ngOnInit(): void {
     this.docs = this.docsService.getDocs();
   }
 
   getImageDocs(){
-    return this.docsService.getDocs().filter(doc => doc.type == "image");
+    return this.docsService.getDocs().filter(doc => doc.type == "image" || doc.type == "doc-image").map(doc => {
+      if(doc.type == "image") return doc;
+      return {id: doc.id, name: "Use Case", type: "image", phase: doc.phase, details: { path: doc.details.path } }
+    });
   }
 
   isAllFilesRoute(){
@@ -38,7 +42,11 @@ export class SidebarComponent implements OnInit {
   showDoc(id: number){
     let doc = this.docsService.getDoc(id);
     //Show doc on page
-    console.log(`Here you go: ${doc.id} -> ${doc.name}`);    
+    console.log(`Here you go: ${doc.id} -> ${doc.name}`);
+    if(this.isAllFilesRoute()){
+      this.allFilesViewService.setImgPath(doc.details.path);
+      return;
+    }
     this.phaseService.selectPhase(doc.phase);
     setTimeout(() => this.docsService.fillForm(doc.phase,doc),100);
   }

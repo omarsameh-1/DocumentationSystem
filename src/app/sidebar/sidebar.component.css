@@ -1,0 +1,6 @@
+.list-group-item:focus{
+    color: blue;
+}
+.list-group-item:active{
+    color: blue;
+}
