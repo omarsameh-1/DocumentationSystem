@@ -4,3 +4,7 @@
     <app-requirements-phase *ngIf="getPhaseView() == 2"></app-requirements-phase>
     <app-design-phase *ngIf="getPhaseView() == 3"></app-design-phase>
 </div>
+
+<div *ngIf="getPhaseView() == 0">
+    Please choose a phase
+</div>

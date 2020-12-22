@@ -55,7 +55,6 @@ export class DocsService {
   }
 
   editDoc(id: number, updatedDoc: Doc) {
-    console.log("editing doc");
     let index = this.getIndex(id);
     this.docs[index] = updatedDoc;
   }
@@ -94,8 +93,9 @@ export class DocsService {
         (<HTMLInputElement>document.getElementById("img")).src = doc.details.path;
         break;
       case 3:
-        //TODO LATER
-        (<HTMLInputElement>document.getElementById("InpuField")).value = doc.details.path;
+        (<HTMLInputElement>document.getElementById("fileName_1")).value = doc.name;
+        (<HTMLInputElement>document.getElementById("fileImage_1")).src = doc.details.path;
+        (<HTMLInputElement>document.getElementById("hiddenImage_1")).value = doc.details.path;
         break;
       default:
         console.log("An error happened");
@@ -117,7 +117,9 @@ export class DocsService {
         }
         break;
       case 3:
-        // //TO TEST
+        if(!doc.name || !doc.details.path){
+          message = "Please fill all fields";
+        }
         break;
       default:
         console.log("An error happened");

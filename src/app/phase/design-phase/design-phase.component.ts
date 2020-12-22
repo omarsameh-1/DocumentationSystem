@@ -10,10 +10,13 @@ import { DocsService } from 'src/app/sidebar/docs.service';
 })
 export class DesignPhaseComponent implements OnInit {
 
-  nameEntered: boolean = false;
-  files_: string[] = [""];
-  toAdd:Doc[] = [];
-  imgPath:string[]=[];
+  files_: Doc[] = [{
+      id: 1,
+      name: '',
+      type:'image',
+      phase: 3,
+      details:{}
+  }];
 
   constructor(private docsService: DocsService) {
 
@@ -22,67 +25,52 @@ export class DesignPhaseComponent implements OnInit {
   ngOnInit() {
   }
 
-  inputToggle(){
-    if((document.getElementById('fileName') as HTMLInputElement ).value != ""){
-      this.nameEntered = true;
-    } else {
-      this.nameEntered = false;
-    }
-  }
-
-  AddDocument() {
+  addNewDoc() {
     // doc means image as a doc for design 
-    this.files_.push('');
+    this.files_.push({
+      id: this.files_.length + 1,
+      name: '',
+      type:'image',
+      phase: 3,
+      details:{}
+    });
   }
 
-  RemoveDocument(i: number) {
+  removeDoc(i: number) {
     this.files_.splice(i, 1);
-    this.toAdd.splice(i, 1);
-    this.imgPath.splice(i, 1);
   }
 
-  docImage(event: any){
+  docImage(event: any, i: number){
     if(event.target.files){
       const reader = new FileReader();
       reader.readAsDataURL(event.target.files[0]);
       reader.onload=(event:any)=>{
-        this.imgPath.push(event.target.result);
+        this.files_[i].details.path = event.target.result;
+        (<HTMLInputElement>document.getElementById("hiddenImage_" + (i+1))).value = this.files_[i].details.path!;
       }
     }
-    this.handleUpload(event);
   }
 
-  handleUpload(event:any){
-    console.log((document.getElementById('fileName') as HTMLInputElement ).value);
-    let doc = <Doc>{
-      id: parseInt((document.getElementById('id') as HTMLInputElement ).value),
-      name: ((document.getElementById('fileName') as HTMLInputElement ).value === "" ? event.target.files[0].name : (document.getElementById('fileName') as HTMLInputElement ).value),
-      type:'image',
-      phase: 3,
-      details:{}
-    }
-    this.toAdd.push(doc);
- }
-
  Save() {
-    for(let i = 0; i < this.toAdd.length; i++){
-      this.toAdd[i].details.path = this.imgPath[i];
-    }
-    if(this.toAdd.length == 0){
-      alert("Fill all fields");
+    let hiddenImg = (<HTMLInputElement>document.getElementById("hiddenImage_1")).value;
+    this.files_[0].details.path = hiddenImg;
+    this.files_[0].name = (<HTMLInputElement>document.getElementById("fileName_1")).value;
+    if(this.files_.length == 1 && (!this.files_[0].name || !this.files_[0].details.path)){
+      console.log("issue is here");
+      console.log(`name: ${this.files_[0].name} , path: ${this.files_[0].details.path}`)
+      alert("Please fill all fields");
       return;
     }
 
-    this.toAdd.forEach((file)=>{
-      if(this.docsService.validate(file) == ""){
+    this.files_.forEach((file)=>{
+      let message = this.docsService.validate(file);
+      if(message == ""){
         this.docsService.addNewDoc(file);
       } else {
-        alert("Fill all fields");
+        alert(message);
         return;
       }
     });
-    this.files_ = [""];
-    this.toAdd = [];
   }
 
 }
