@@ -1,59 +1,63 @@
 
-  <form>
-    <div class="form-group row">
+<div class="FormContainerr">
+  <div class="round-logo"></div>
+  <div class="name">Requirements Phase</div>
+  <form class="formContainer">
+    <div class="form-group row Introduction">
       <label for="intro" class="col-sm-4 col-form-label">Introduction</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="intro"  >
-      </div>
-      <input type="hidden" id="id" value="0">
+        <input type="text" class="form-control file" id="intro" placeholder="Introduction" > 
     </div>
-    <div class="form-group row">
-      <label for="purpose" class="col-sm-4 col-form-label">Purpose of software being developed</label>
-      <div class="col-sm-10">
-        <input type="text" placefolder="type" class="form-control" id="purpose">
-      </div>
+    <input type="hidden" id="id" value="0">
+    <div class="form-group row Purpose_of_software">
+      <label for="purpose" class="col-sm-6 col-form-label">Purpose of software being developed</label>
+      
+        <input type="text"  class="form-control file" id="purpose" 
+        placeholder="Purpose of software ">
+      
     </div>
-     <div class="form-group row">
+     <div class="form-group row IntendedAudience">
       <label for="audience" class="col-sm-4 col-form-label">Intended Audience</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="audience">
+        <input type="text" class="form-control file" id="audience" placeholder="Intended Audience">
       </div>
      </div>
-      <div class="form-group row">
+      <div class="form-group Overalldescription row">
         <label for="intro" class="col-sm-4 col-form-label">Overall description of the software</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="overall">
-        </div>
+        
+            <input type="text" class="form-control file" id="overall" placeholder="Overall description of the software">
+        
       </div>
-      <div class="form-group">
+      <div class="form-group SystemFeatures" style="width: 650px; margin-left: -14px;">
         <label for="features" class="col-sm-4 col-form-label">System Features and Requirements:</label>
-        <label for="functional" class="col-sm-4 col-form-label" style="display:block">1-Functional Requirements</label>
-        <label for="nonfunctional" class="col-sm-4 col-form-label" style="display:block">2-Non-Functional Requirements</label>
-        <label for="external" class="col-sm-4 col-form-label" style="display:block">3-External Interface Requirements</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="features">
-        </div>
+        <ul>
+          <li>Functional Requirements</li>
+          <li>Non-Functional Requirements</li>
+          <li>External Interface Requirements</li></ul>
+        
+            <input type="text" class="form-control file" id="features" placeholder="Write From Above">
+        
         </div>
     
-    <div class="form-group row">
-      <div class="col-sm-4">
+    <div class="form-group row Usecase">
+      
        <label for="usecase" class="col-sm-4 col-form-label">Usecase</label>
-        <input type="file" accept='image/*' id="FileUpload" class="btn btn-primary" (change)="docImage($event)" ><br>
+        <input type="file" accept='image/*' id="FileUpload" class="btn file btn-primary"
+         (change)="docImage($event)" style="color: #c39a25;"><br>
         <input type="hidden" id="hiddenImage">
         <img class="card-img-top" id="img" [src]="imgPath" alt="">
-      </div>
+      
     </div>
-    <div class="form-group row">
-      <div class="col-sm-4"  >
+    <div class="form-group row justify-content-center" style="margin-top: 45px;">
+      <div class="col-sm-2"  >
         <button type="save" class="btn btn-success"  (click)="saveDoc()" >Save</button> 
       </div>
-      <div class="col-sm-4">
-        <input type="reset" class="btn btn-secondary">
+      <div class="col-sm-2">
+        <input type="reset" class="btn btn-primary">
       </div>
     </div>
 </form>
+</div>
 
-  
 
 
 

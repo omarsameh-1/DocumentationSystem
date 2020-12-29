@@ -1,0 +1,44 @@
+
+.FormContainerr{
+    width:600px;
+    height:950px;
+    box-shadow:rgb(213,210,200) 5px 5px 15px,rgb(255,255,255) -5px -5px 15px;
+    border-radius:50px;
+    padding:25px 10px;
+    margin:50px 1;
+   }
+   .round-logo{
+    background-image:url("../images/white-background.jpg");
+    width:80px;
+    height:80px;
+    background-size:cover;
+    border-radius:50px;
+    margin:0 auto;
+    box-shadow:2px 2px 4px #fff, -4px -4px 10px #ccc;
+   }
+   .name{
+    text-align:center;
+    font-size:30px;
+    color:#A89833;
+    margin-top:5px;
+   }
+   .formContainer{
+    width:100%;
+    padding:20px 5px 40px 5px;
+   }
+   .formContainer input{
+    border:none;
+    outline:none;
+    background: none;
+    padding:15px 5px;
+    font-size:20px;
+    
+   }
+   .ProjectTitle,.StartDate,.EndDate,.ProjectObjectives,.ProjectManager,.BudgetInformation,.ProjectScope{
+    box-shadow:inset 10px 10px 20px #ccc,inset -10px -10px 10px #fff;
+    margin-bottom:20px;
+    padding-left:10px;
+    padding-right:10px;
+    border-radius:20px;
+    
+   }

@@ -62,12 +62,16 @@
     background-color:#198754 ;
 }
 form{
-    margin-top:100px;
+    margin-top: 18px;
     
-
+}
+section{
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);;
+    outline: 3px outset #33ccff ;
 }
 #InpuField{
     background-color: #498596;
+    width: 320px;
 }
 .StylH4{
     font-family:fantasy;
@@ -79,4 +83,13 @@ form{
 .EditRes{
     margin-left: 5px;
     background-color:#249ef4cc;
+}
+.nameDiagram{
+    box-shadow:inset 10px 10px 20px #ccc,inset -10px -10px 10px #fff;
+    margin-bottom:20px;
+    padding-left:10px;
+    padding-right:10px;
+    border-radius:20px;
+    border-color: #ccc ;
+    outline: none;
 }

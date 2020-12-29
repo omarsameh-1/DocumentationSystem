@@ -1,0 +1,256 @@
+[33mcommit 34d57f5b5c7935a39af36c7d4142799cfb221eba[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: c9fcf77 0f98ff0
+Author: Yousef Rady <54912410+usef@users.noreply.github.com>
+Date:   Tue Dec 22 15:17:03 2020 +0200
+
+    Merge pull request #12 from usef/validation
+    
+    Validation
+
+[33mcommit 0f98ff0311c0a1258ebcfb5d21e0dad75ad51167[m[33m ([m[1;31morigin/validation[m[33m)[m
+Merge: 0967fe7 7f97de7
+Author: usef <usefrady@gmail.com>
+Date:   Tue Dec 22 15:14:58 2020 +0200
+
+    Resolved conflicts
+
+[33mcommit 0967fe77f85b2554fec68d7eead1013b18b551b1[m
+Author: usef <usefrady@gmail.com>
+Date:   Tue Dec 22 14:55:57 2020 +0200
+
+    Final commit
+
+[33mcommit 7f97de749a4506d7b100e1b74251422064e728a2[m
+Author: ahmedAshref <58373471+ahmedAshrefsw@users.noreply.github.com>
+Date:   Mon Dec 21 00:39:03 2020 +0200
+
+    cowrking on design phase
+
+[33mcommit 9e0fe4eaf1a5f52bd863656fe428892d4fb3bed2[m
+Author: ahmedAshref <58373471+ahmedAshrefsw@users.noreply.github.com>
+Date:   Mon Dec 21 00:23:06 2020 +0200
+
+    finally finished req phase
+
+[33mcommit a4d13389e793beea03038f7353f90260f4c61ceb[m
+Merge: d7912a1 c9ca69f
+Author: ahmedAshref <58373471+ahmedAshrefsw@users.noreply.github.com>
+Date:   Sun Dec 20 23:43:26 2020 +0200
+
+    Merge branch 'validation' of https://github.com/usef/documentation-system into validation
+
+[33mcommit c9ca69f45a741d9b1dc56b0cfd5824aa15419996[m
+Author: usef <usefrady@gmail.com>
+Date:   Sun Dec 20 23:34:15 2020 +0200
+
+    fix error of deleting doc on update
+
+[33mcommit d7912a1ba7ba45462c55a648cd4343a8e82cfdbb[m
+Merge: e7e0fe6 5c07894
+Author: ahmedAshref <58373471+ahmedAshrefsw@users.noreply.github.com>
+Date:   Sun Dec 20 16:54:31 2020 +0200
+
+    Merge branch 'validation' of https://github.com/usef/documentation-system into validation
+
+[33mcommit e7e0fe6c6c4d06c8ad673c1fa3de9860343e6342[m
+Author: ahmedAshref <58373471+ahmedAshrefsw@users.noreply.github.com>
+Date:   Sun Dec 20 16:54:26 2020 +0200
+
+    design phase
+
+[33mcommit 5c078947fa655898b532e7b633e137df1760a2bc[m
+Author: usef <usefrady@gmail.com>
+Date:   Sun Dec 20 16:50:44 2020 +0200
+
+    enter diagram name done
+
+[33mcommit 3ae37410246f2807e95e5622eb0710a69021d335[m
+Merge: e122dd5 ee918b0
+Author: usef <usefrady@gmail.com>
+Date:   Sun Dec 20 16:21:51 2020 +0200
+
+    Merge branch 'validation' of https://github.com/usef/documentation-system into validation
+
+[33mcommit e122dd5aed116802327585dc5e11f1f35898a170[m
+Author: usef <usefrady@gmail.com>
+Date:   Sun Dec 20 16:20:39 2020 +0200
+
+    initial doc in design phase
+
+[33mcommit ee918b090fdafe4366d3e2a21246be4f90ba31a5[m
+Author: usef <usefrady@gmail.com>
+Date:   Sun Dec 20 16:20:39 2020 +0200
+
+    initial doc in design phase
+
+[33mcommit 539657934f0f8cf3a5038746a6de4a3af558d710[m
+Author: usef <usefrady@gmail.com>
+Date:   Sat Dec 19 22:24:05 2020 +0200
+
+    design phase added imgs and view in all files
+
+[33mcommit dd1bf1dbff72c08a56e5817a3196bc3a9ce517b2[m
+Author: usef <usefrady@gmail.com>
+Date:   Sat Dec 19 01:02:44 2020 +0200
+
+    work on design phase image upload
+
+[33mcommit b50bd8cc3e68a3114fef23387302d83a85872e41[m
+Author: ahmedAshref <58373471+ahmedAshrefsw@users.noreply.github.com>
+Date:   Fri Dec 18 22:34:53 2020 +0200
+
+    working on req-validation
+
+[33mcommit 6dc0cbb5d01936bf5c3a01b77973436d9fd95210[m
+Author: ahmedAshref <58373471+ahmedAshrefsw@users.noreply.github.com>
+Date:   Fri Dec 18 22:06:44 2020 +0200
+
+    validation for intial phase done - intial phase done completely
+
+[33mcommit c9fcf77594bd7c2e8b7279004d9730b2d9fd164c[m
+Merge: ff11841 27ad8e1
+Author: Yousef Rady <54912410+usef@users.noreply.github.com>
+Date:   Thu Dec 17 00:04:40 2020 +0200
+
+    Merge pull request #11 from usef/fix-update-doc
+    
+    Fix update doc and remove form after add
+
+[33mcommit 27ad8e102729b33a9dc493e4f4ba24cb3f41b539[m[33m ([m[1;31morigin/fix-update-doc[m[33m)[m
+Author: ahmedAshref <58373471+ahmedAshrefsw@users.noreply.github.com>
+Date:   Wed Dec 16 23:40:25 2020 +0200
+
+    removing form after add or update on all phases done
+
+[33mcommit fc9bd73bc40c2f5f4318ed67d79083e78482dcc9[m
+Author: ahmedAshref <58373471+ahmedAshrefsw@users.noreply.github.com>
+Date:   Wed Dec 16 23:23:02 2020 +0200
+
+    fixied updating docs in all phases
+
+[33mcommit ff11841aad50adc28fd064fc604126138a9c081d[m
+Author: usef <usefrady@gmail.com>
+Date:   Wed Dec 16 22:42:49 2020 +0200
+
+    show doc works
+
+[33mcommit 8309298e1dc05d936b7d8bd25ceedc5223e98d49[m
+Author: usef <usefrady@gmail.com>
+Date:   Wed Dec 16 21:32:44 2020 +0200
+
+    close button on phase
+
+[33mcommit 56b35c9b39750832a8aa3c6339f73855cf9ed799[m
+Author: usef <usefrady@gmail.com>
+Date:   Wed Dec 16 20:59:46 2020 +0200
+
+    sidebar works for all files page
+
+[33mcommit 475c9aca1fe33aa9c2cd6f53e3c6cb60f9555f68[m
+Merge: 6367f83 77e2a48
+Author: Yousef Rady <54912410+usef@users.noreply.github.com>
+Date:   Wed Dec 16 03:19:09 2020 +0200
+
+    Merge pull request #10 from usef/fix-req-phase
+    
+    Fix req phase
+
+[33mcommit 77e2a48b1c1f89b0d23e540211bff7cda3222e5a[m[33m ([m[1;31morigin/fix-req-phase[m[33m)[m
+Author: ahmedAshref <58373471+ahmedAshrefsw@users.noreply.github.com>
+Date:   Wed Dec 16 03:16:03 2020 +0200
+
+    req  phase completed without validation
+
+[33mcommit 094777fd6aa686d81298ed8703cdb73179753b37[m
+Author: ahmedAshref <58373471+ahmedAshrefsw@users.noreply.github.com>
+Date:   Wed Dec 16 03:06:11 2020 +0200
+
+    fix ui error on requirment phase
+
+[33mcommit 6367f83f402f5b966291dceb2113bd3a912297d6[m
+Author: usef <usefrady@gmail.com>
+Date:   Wed Dec 16 02:45:57 2020 +0200
+
+    requirements phase small fix
+
+[33mcommit 315ff122bdfd3dab4b7d39a2c3b6b60825c2e73c[m
+Merge: 6ac9c58 186d8b4
+Author: Yousef Rady <54912410+usef@users.noreply.github.com>
+Date:   Wed Dec 16 02:25:39 2020 +0200
+
+    Merge pull request #3 from usef/requirment-phase
+    
+    requirement component base
+
+[33mcommit 6ac9c589b2520f6645f8a8f51f2a10f986a013fe[m
+Merge: b160e93 49bdc9c
+Author: Yousef Rady <54912410+usef@users.noreply.github.com>
+Date:   Wed Dec 16 02:22:56 2020 +0200
+
+    Merge pull request #9 from usef/fixes
+    
+    Design Component Fixes
+
+[33mcommit 49bdc9cd538cc0b6c8bb6ffaf27d16e6aa059b2d[m[33m ([m[1;31morigin/fixes[m[33m)[m
+Author: usef <usefrady@gmail.com>
+Date:   Wed Dec 16 02:20:24 2020 +0200
+
+    fix design component errors
+
+[33mcommit 55f6c5c705e9a7c12c181e300061928ebba0a3b6[m
+Author: ahmedAshref <58373471+ahmedAshrefsw@users.noreply.github.com>
+Date:   Wed Dec 16 02:03:14 2020 +0200
+
+    trying to solve design func - passed to yousef
+
+[33mcommit 2fec6b407c71a5cb89de68551190ce1c671157cd[m
+Author: ahmedAshref <58373471+ahmedAshrefsw@users.noreply.github.com>
+Date:   Wed Dec 16 00:36:47 2020 +0200
+
+    all files update
+
+[33mcommit b160e930bf3ca7c001c6be725e57ea718697547f[m
+Merge: 52eb2a2 bbcf18f
+Author: Yousef Rady <54912410+usef@users.noreply.github.com>
+Date:   Wed Dec 16 00:12:16 2020 +0200
+
+    Merge pull request #8 from usef/fixes
+    
+    Fixes
+
+[33mcommit bbcf18fab603d0136164974bef602847e40666b1[m
+Author: usef <usefrady@gmail.com>
+Date:   Wed Dec 16 00:10:27 2020 +0200
+
+    fix id of docs
+
+[33mcommit 0f77ebea2a3e57f98d5c5f36b4aef05b1c170a82[m
+Author: usef <usefrady@gmail.com>
+Date:   Tue Dec 15 14:40:33 2020 +0200
+
+    Delete doc functionality
+
+[33mcommit 186d8b455a1b8eeac92a8e351973965b7dcff955[m[33m ([m[1;31morigin/requirment-phase[m[33m)[m
+Author: Omar <omarelnems15@gmail.com>
+Date:   Mon Dec 14 23:08:33 2020 +0200
+
+    phase-3
+
+[33mcommit 52eb2a2188fc94e19487291e0f372e514d51a7a6[m
+Merge: f1dd98c 86d7682
+Author: Yousef Rady <54912410+usef@users.noreply.github.com>
+Date:   Mon Dec 14 14:14:28 2020 +0200
+
+    Merge pull request #7 from usef/design-phase
+    
+    Design phase
+
+[33mcommit 86d768245761756faed9f848562346f41ce259b1[m[33m ([m[1;31morigin/design-phase[m[33m, [m[1;32mdesign-phase[m[33m, [m[1;32madd-CSS[m[33m)[m
+Author: AmrAhmedRamadan <aamr91437@gmail.com>
+Date:   Sun Dec 13 22:15:44 2020 +0200
+
+    DPhase-3
+
+[33mcommit f1dd98c53d7945aca5412f89478c4a98eb755bab[m
+Author: usef <usefrady@gmail.com>
+Date:   Sun Dec 13 
