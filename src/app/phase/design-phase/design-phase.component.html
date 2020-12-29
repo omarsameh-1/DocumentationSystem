@@ -1,4 +1,4 @@
-<form #DocumentForm="ngForm" class="ml-3 " (ngSubmit)="Save()">
+<form #DocumentForm="ngForm" class="ml-3" (ngSubmit)="Save()">
     <div class="row" >
         <div class="col-6" > 
             <button type="button" class="btnn mb-2" id="ReCAdd" (click)="addNewDoc()">Add Document</button>
@@ -9,8 +9,8 @@
                         <h3 class="StylH4">Document {{i + 1}}</h3>
                     </div>
                     <input type="hidden" id="id" value="0">
-                    <div class="  col-6 text-right" *ngIf="i!=0">
-                        <button type="button" class="  btn btn-danger btn-sm" (click)="removeDoc(i)">Remove &larr; </button>
+                    <div class="col-6 text-right" *ngIf="i!=0">
+                        <button type="button" class="btn btn-danger btn-sm" (click)="removeDoc(i)">Remove &larr; </button>
                     </div>
                 </div>
                 <div class="row">

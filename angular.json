@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "documentation-system"
+  "defaultProject": "documentation-system",
+  "cli": {
+    "analytics": "aae23f05-806f-4a55-aca6-57218fc0e7ea"
+  }
 }
