@@ -1,1 +1,4 @@
-<p>view works!</p>
+<button (click)="viewDoc()" class="btn btn-success">Load Image</button>
+<div *ngIf="src">
+    <img [src]="src">
+</div>

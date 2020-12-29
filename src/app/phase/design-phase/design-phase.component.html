@@ -1,24 +1,27 @@
-<form #DocumentForm="ngForm" class="container ml-3" (ngSubmit)="Save()">
-    <div class="row justify-content-center">
-        <div class="col-6">
-            <button type="button" class="btnn mb-2" id="ReCAdd" (click)="AddDocument()">Add Document</button>
+<form #DocumentForm="ngForm" class="ml-3 " (ngSubmit)="Save()">
+    <div class="row" >
+        <div class="col-6" > 
+            <button type="button" class="btnn mb-2" id="ReCAdd" (click)="addNewDoc()">Add Document</button>
 
-            <section class="container border mb-4 p-3" *ngFor="let filee_ of files_; let i = index;">
+            <section  class="container border mb-4 p-3" *ngFor="let file of files_; let i = index;">
                 <div class="row">
                     <div class="col-6">
                         <h3 class="StylH4">Document {{i + 1}}</h3>
                     </div>
-                    <div class="col-6 text-right" *ngIf="i!=0">
-                        <button type="button" class="btn btn-danger btn-sm" (click)="RemoveDocument(i)">Remove</button>
+                    <input type="hidden" id="id" value="0">
+                    <div class="  col-6 text-right" *ngIf="i!=0">
+                        <button type="button" class="  btn btn-danger btn-sm" (click)="removeDoc(i)">Remove &larr; </button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-8">
                         <div class="form-group">
                             <label id="insideDoc">Document</label>
-                            <input type="file" class="btnn form-control" name="file_{{filee_.id}}" id="InpuField"
-                                (change)="handleUpload($event)" accept="image/x-png,image/gif,image/jpeg" />
-
+                            <input type="text" class="nameDiagram" [(ngModel)]="file.name" name="fileName_{{file.id}}" id="fileName_{{file.id}}" placeholder="Enter Diagram Name">
+                            <input type="file" class="btnn form-control" name="file_{{file.id}}" id="InpuField"
+                            (change)="docImage($event, i)" accept="image/x-png,image/gif,image/jpeg" />
+                            <input type="hidden" id="hiddenImage_{{file.id}}">
+                            <img class="card-img-top" [src]="file.details.path" id="fileImage_{{file.id}}" alt="">
                         </div>
                     </div>
 

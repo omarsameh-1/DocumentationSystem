@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Doc } from '../model/doc.model';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,6 @@ export class PhasesService {
 
   selectPhase(phaseId: number){
     this.chosenPhase = phaseId;
-    console.log(`phase chosen : ${this.phases[phaseId-1].name}`);
   }
 
 }
